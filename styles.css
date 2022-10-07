@@ -1,0 +1,105 @@
+        html   {
+            box-sizing: border-box;
+            background-color: #ffc600;
+            font-family: 'helvetica neue';
+            font-size: 20px;
+            font-weight: 200;
+        }
+        
+        body   {
+            margin: 0;
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        
+        .panels {
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+        
+        .panel {
+            background-color: #6b0f9c;
+            box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            text-align: center;
+            align-items: center;
+            /* Safari transitioned event.propertyName === flex */
+            /* Chrome + FF transitiones event.propertyName === flex-grow */
+            transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
+            font-size: 20px;
+            background-size: cover;
+            background-position: center;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            display: flex;
+        }
+        
+        .panel1 {
+            background-image: url(https://arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/V34M74TUGFGNDCYC2YVBTURXN4.jpg);
+        }
+        
+        .panel2 {
+            background-image: url(https://www.latercera.com/resizer/076hA8pDJ2Cs2nksVafY0K2sRcw=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/FZLUMACP4RETPGOSJHCPLYM4WY.jpg);
+        }
+        
+        .panel3 {
+            background-image: url(https://i.pinimg.com/originals/c6/4c/73/c64c731084021faacaac3f966fc51a46.jpg);
+        }
+        
+        .panel4 {
+            background-image: url(https://static2.cbrimages.com/wordpress/wp-content/uploads/2020/10/mileena-step-back-feature-header.jpg);
+        }
+        
+        .panel5 {
+            background-image: url(https://i.pinimg.com/originals/74/dc/a1/74dca1782ee8d7fa380c2d626d2a5128.jpg);
+        }
+        /* Flex items  */
+        
+        .panel>* {
+            margin: 0;
+            width: 100%;
+            transition: transform 0.5s;
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .panel>*:first-child {
+            transform: translateY(-100%);
+        }
+        
+        .panel.open-active>*:first-child {
+            transform: translateY(0);
+        }
+        
+        .panel>*:last-child {
+            transform: translateY(100%);
+        }
+        
+        .panel.open-active>*:last-child {
+            transform: translateY(0);
+        }
+        
+        .panel p {
+            text-transform: uppercase;
+            font-family: 'Amatic SC', cursive;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+            font-size: 2em;
+        }
+        
+        .panel p:nth-child(2) {
+            font-size: 4em;
+        }
+        
+        .panel.open {
+            font-size: 40px;
+            flex: 5;
+        }
